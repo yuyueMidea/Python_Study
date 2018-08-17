@@ -1,0 +1,43 @@
+Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:06:47) [MSC v.1914 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> class Student(obj):
+	def __init__(self, name,score):
+		self.name=name
+		self.score=score
+
+		
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    class Student(obj):
+NameError: name 'obj' is not defined
+>>> class Student(object):
+	def __init__(self, name,score):
+		self.name=name
+		self.score=score
+	def print_score(self):
+		print('%s: %s' % (self.name, self.score))
+	def print_grade(self):
+		if self.score>=90:
+			return 'A'
+		elif self.score>=60:
+			return 'B'
+		else:
+			return 'C'
+
+		
+>>> zhang=Student('zhangsan',55)
+>>> li=Student('lisi',78)
+>>> wang=Student('wangwu', 96)
+>>> zhang
+<__main__.Student object at 0x02BE2470>
+>>> zhang.name
+'zhangsan'
+>>> zhang.print_grade()
+'C'
+>>> zhang.print_score()
+zhangsan: 55
+>>> li.print_score()
+lisi: 78
+>>> li.print_grade()
+'B'
+>>> 
