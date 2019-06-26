@@ -8,12 +8,9 @@
 <!--引入公共部分-->
 {% include 'index.html' %}
 
-    <form action="/hello" method="post">
-        {% csrf_token %}
+    <form action="/hello" method="get">
         <input type="text" name="q" class="form-control">
-        <input type="submit" value="Submit" class="btn btn-primary">
+        <input type="submit" value="搜索" class="btn btn-info">
     </form>
-
-    <p>{{ rlt }}</p>
 </body>
 </html>

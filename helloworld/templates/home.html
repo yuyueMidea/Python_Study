@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--引入公共部分-->
+{% include 'index.html' %}
+
+<h1>教程列表：</h1>
+<ul>
+{% for i in TutorialList %}
+    <li>{{ i }}</li>
+
+{% endfor %}
+</ul>
+<hr>
+<p>一个长度为100的 List</p>
+<p style="padding: 22px;">
+{% for item in List %}
+<span> {{ item }}, </span>
+{% endfor %}
+</p>
+<p>获取当前网址：{{ request.path }}</p>
+
+</body>
+</html>

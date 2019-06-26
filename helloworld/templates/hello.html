@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        *{ padding: 0;margin: 0;}
-        ul {list-style: none;}
         table{
-            border-collapse: collapse;
             margin: 33px;border: 1px solid #ccc; padding: 11px;
         }
         table td{
@@ -28,15 +25,15 @@
 
 </head>
 <body>
-    <p style="text-align: center;font-size: 44px;">菜鸟教程 Django 测试。</p>
-<hr>
+<!--引入公共部分-->
+{% include 'index.html' %}
 
-<form action="/testdb" class="the_form" method="post" >
+<form action="/query" class="the_form" method="post" >
         {% csrf_token %}
-        用户名:<input type="text" name="a_name">
-        <input type="submit" value="增加">
+        <input type="text" name="a_name" class="form-control" placeholder="请输入用户名">
+        <input type="submit" value="增加" class="btn btn-primary">
     </form>
-
+<hr>
 <table>
     <tr>
         <td>ID</td>
@@ -47,7 +44,7 @@
         <tr>
             <td>{{athlete.id}}</td>
             <td>{{athlete.name}}</td>
-            <td><a href="/delete/?id={{athlete.id}}">删除</a></td>
+            <td><a href="/delete/?id={{athlete.id}}" class="btn btn-danger btn-sm">删除</a></td>
         </tr>
     {% endfor %}
 </table>

@@ -2,20 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>django模板</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <style>
-        p{
-            text-align: center;
-            font-size: 44px;
+        *{ padding: 0;margin: 0;}
+        ul {list-style: none;}
+        a{
+            text-decoration: none;
+        }
+         table {
+             border-collapse: collapse;
+         }
+        .app-header{
+            /*position: fixed;top: 0;   right: 0;    left: 0;    */
+            height: 3.5rem; z-index: 1030;
+            box-shadow: 0 0 0 1px rgba(20,20,31,.05), 0 1px 3px 0 rgba(20,20,31,.15);
+            background-color: #fff;
+        }
+        .app-header #showTIME{
+            float: left;
+            padding: 0 2em;
+            background: lightpink; line-height: 3.5em;
+        }
+        .app-header .menu{
+            display: flex;
+        }
+        .app-header .menu li{
+            flex: 1; text-align: center;
+        }
+        .app-header .menu .menu-link{
+            font-size: .875rem;line-height: 3.5rem;
+            position: relative;  display: block; color: #aaa;
+            text-decoration: none;
+        }
+        .app-header .menu .menu-link:hover{
+            background-color: #409EFF;
         }
     </style>
 </head>
-<body>
-    <p>菜鸟教程 Django 测试。</p>
-    <p>欢迎来到主页！</p>
-<hr>
-
-
+<body  onload="setInterval(()=>document.getElementById('showTIME').innerHTML=new Date().toLocaleString().slice(10,20))">
+<!--这是公共头部-->
+<header class="app-header">
+    <div id="showTIME"></div>
+    <ul class="menu">
+        <li><a href="/hello" class="menu-link">hello</a></li>
+        <li><a href="/home" class="menu-link">home</a></li>
+        <li><a href="/query" class="menu-link">query</a></li>
+    </ul>
+</header>
 
 </body>
 </html>
