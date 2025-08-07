@@ -11,4 +11,5 @@ content_text= wx.TextCtrl(frame,pos = (5,39),size = (475,300),style = wx.TE_MULT
 # wx.TE_MULTILINE可以实现换行功能,若不加此功能文本文档显示为一行显示
 
 frame.Show()
+
 app.MainLoop()
