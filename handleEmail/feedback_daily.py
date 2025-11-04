@@ -25,8 +25,7 @@ IMAP_PORT_SSL = 993
 POP3_HOST = "pop.126.com"
 POP3_PORT_SSL = 995
 MAIL_USER = "yy18825237023@126.com"     # 源邮箱账号
-MAIL_PASS = "EDuaH3BumbLK7HEi"
-# "在126后台生成的客户端授权码"  # 源邮箱“客户端授权码”（不是登录密码）
+MAIL_PASS = ""        # "在126后台生成的客户端授权码"  # 源邮箱“客户端授权码”（不是登录密码）
 
 # 抓取与过滤
 SHOW_LIMIT = 200          # 最多处理多少封（用于 IMAP/POP3 末端切片）
@@ -374,3 +373,4 @@ if __name__ == "__main__":
     if not REPORT_TO:
         print("请在脚本顶部配置 REPORT_TO 收件人列表。"); sys.exit(2)
     main()
+
